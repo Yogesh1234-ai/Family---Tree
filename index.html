@@ -1,174 +1,201 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Family Tree</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            text-align: center;
-        }
-        h1 {
-            color: #2c3e50;
-        }
-        .family-tree {
-            display: inline-block;
-            text-align: left;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .member {
-            margin-left: 20px;
-            line-height: 1.6;
-        }
-        .toggle-button {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            margin: 3px 0;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 18px;
-        }
-        .toggle-button:hover {
-            background-color: #218838;
-        }
-        .children {
-            display: none;
-            margin-left: 20px;
-        }
-    </style>
-    <script>
-        function toggleChildren(id) {
-            const element = document.getElementById(id);
-            if (element.style.display === "none" || element.style.display === "") {
-                element.style.display = "block";
-            } else {
-                element.style.display = "none";
-            }
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Family Tree</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #fdf6e3, #e0f7fa);
+      color: #111827;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #2563eb;
+      margin-bottom: 30px;
+    }
+
+    .family-tree {
+      max-width: 900px;
+      margin: auto;
+      text-align: left;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+    .member {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    .toggle-button {
+      background-color: #10b981;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin: 5px 0;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-button:hover {
+      background-color: #059669;
+    }
+
+    .children {
+      margin-left: 25px;
+      display: none;
+      border-left: 2px dashed #9ca3af;
+      padding-left: 15px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .family-tree {
+        padding: 10px;
+      }
+
+      .toggle-button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>My Family Tree</h1>
-    <div class="family-tree">
+
+  <h1>👨‍👩‍👧‍👦 My Family Tree</h1>
+
+  <div class="family-tree">
+    <div class="member">
+      <button class="toggle-button" onclick="toggleChildren('child1')">❤️ Natesan & Pangajavalli</button>
+      <div id="child1" class="children">
+
         <div class="member">
-            <button class="toggle-button" onclick="toggleChildren('child1')">Natesan ♥️ Pangajavalli</button>
-            <div id="child1" class="children">
-
-                <div class="member">
-                    <button class="toggle-button" onclick="toggleChildren('child2')">Tamizhselvi ♥️ Baskar</button>
-                    <div id="child2" class="children">
-                        <div class="member">
-                            <button class="toggle-button" onclick="toggleChildren('child2a')">Saravanan ♥️ Raj</button>
-                            <div id="child2a" class="children">
-                                - Prejith<br>
-                                - Lomesh
-                            </div>
-                        </div>
-                        <div class="member">
-                            <button class="toggle-button" onclick="toggleChildren('child2b')">Ashok ♥️ Sivagaami</button>
-                            <div id="child2b" class="children">
-                                - Thirukumaran<br>
-                                - Nimalan
-                            </div>
-                        </div>
-                        - Aravind
-                    </div>
-                </div>
-
-                <div class="member">
-                    <button class="toggle-button" onclick="toggleChildren('child3')">Raj ♥️ Sekar</button>
-                    <div id="child3" class="children">
-                        <div class="member">
-                            <button class="toggle-button" onclick="toggleChildren('child3a')">Rani ♥️ Somasundaram</button>
-                            <div id="child3a" class="children">
-                                - Sriranjani<br>
-                                - Sriragavi
-                            </div>
-                        </div>
-                        <div class="member">
-                <button class="toggle-button" onclick="toggleChildren('child3b')">Anitha ♥️ Sabarisan</button>
-                            <div id="child3b" class="children">
-                                - Jaiakash<br>
-                                - Tamizhenthan
-                            </div>
-                        </div>
-                                              <div class="member">
-                            <button class="toggle-button" onclick="toggleChildren('child3c')">Senthilmurugan ♥️ Ajeetha</button>
-                            <div id="child3c" class="children">
-                                - 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="member">
-                    <button class="toggle-button" onclick="toggleChildren('child4')">Shanthi ♥️ Rathinasabapathy</button>
-                    <div id="child4" class="children">
-                                              <div class="member">
-                            <button class="toggle-button" onclick="toggleChildren('child4a')">Kavitha ♥️ Arulmani</button>
-                            <div id="child4a" class="children">
-                                - Mohanaprasath<br>
-                                - Praveen
-                            </div>
-                        </div>
-                                              <div class="member">
-                            <button class="toggle-button" onclick="toggleChildren('child4b')">Anandan ♥️ Aruna</button>
-                            <div id="child4b" class="children">
-                                - Advika
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="member">
-                    <button class="toggle-button" onclick="toggleChildren('child5')">Chitra ♥️ Anbu</button>
-                    <div id="child5" class="children">
-                        <!-- No children listed -->
-                    </div>
-                </div>
-
-                <div class="member">
-                    <button class="toggle-button" onclick="toggleChildren('child6')">Palani ♥️ Viji</button>
-                    <div id="child6" class="children">
-                                              <div class="member">
-                            <button class="toggle-button" onclick="toggleChildren('child6a')">Aruna ♥️ Anandan</button>
-                            <div id="child6a" class="children">
-                                - Advika
-                            </div>
-                        </div>
-                                              <div class="member">
-                            <button class="toggle-button" onclick="toggleChildren('child6b')">Ajeetha ♥️ Senthilmurugan</button>
-                            <div id="child6b" class="children">
-                                - 
-                            </div>
-                        </div>
-                        - Yogeshwaran
-                    </div>
-                </div>
-
-                <div class="member">
-                    <button class="toggle-button" onclick="toggleChildren('child7')">Somasundaram ♥️ Rani</button>
-                    <div id="child7" class="children">
-                        - Sriranjani<br>
-                        - Sriragavi
-                    </div>
-                </div>
-
-                <div class="member">
-                    <button class="toggle-button" onclick="toggleChildren('child8')">Gomathi ♥️ Ashok</button>
-                    <div id="child8" class="children">
-                        - Akash<br>
-                        - Aagayasundhari
-                    </div>
-                </div>
-
+          <button class="toggle-button" onclick="toggleChildren('child2')">👩 Tamizhselvi ❤️ 🧔 Baskar</button>
+          <div id="child2" class="children">
+            <div class="member">
+              <button class="toggle-button" onclick="toggleChildren('child2a')">👨 Saravanan ❤️ 👩 Raj</button>
+              <div id="child2a" class="children">
+                <div>👦 Prejith</div>
+                <div>👦 Lomesh</div>
+              </div>
             </div>
+            <div class="member">
+              <button class="toggle-button" onclick="toggleChildren('child2b')">👨 Ashok ❤️ 👩 Sivagami</button>
+              <div id="child2b" class="children">
+                <div>👦 Thirukumaran</div>
+                <div>👦 Nimalan</div>
+              </div>
+            </div>
+            <div class="member">👦 Aravind</div>
+          </div>
         </div>
+
+        <div class="member">
+          <button class="toggle-button" onclick="toggleChildren('child3')">👩 Raj ❤️ 🧔 Sekar</button>
+          <div id="child3" class="children">
+            <div class="member">
+              <button class="toggle-button" onclick="toggleChildren('child3a')">👩 Rani ❤️ 🧔 Somasundaram</button>
+              <div id="child3a" class="children">
+                <div>👧 Sriranjani</div>
+                <div>👧 Sriragavi</div>
+              </div>
+            </div>
+            <div class="member">
+              <button class="toggle-button" onclick="toggleChildren('child3b')">👩 Anitha ❤️ 🧔 Sabarisan</button>
+              <div id="child3b" class="children">
+                <div>👦 Jaiakash</div>
+                <div>👦 Tamizhenthan</div>
+              </div>
+            </div>
+            <div class="member">
+              <button class="toggle-button" onclick="toggleChildren('child3c')">👨 Senthilmurugan ❤️ 👩 Ajeetha</button>
+              <div id="child3c" class="children">
+                <div>-</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="member">
+          <button class="toggle-button" onclick="toggleChildren('child4')">👩 Shanthi ❤️ 🧔 Rathinasabapathy</button>
+          <div id="child4" class="children">
+            <div class="member">
+              <button class="toggle-button" onclick="toggleChildren('child4a')">👩 Kavitha ❤️ 🧔 Arulmani</button>
+              <div id="child4a" class="children">
+                <div>👦 Mohanaprasath</div>
+                <div>👦 Praveen</div>
+              </div>
+            </div>
+            <div class="member">
+              <button class="toggle-button" onclick="toggleChildren('child4b')">👨 Anandan ❤️ 👩 Aruna</button>
+              <div id="child4b" class="children">
+                <div>👧 Advika</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="member">
+          <button class="toggle-button" onclick="toggleChildren('child5')">👩 Chitra ❤️ 🧔 Anbu</button>
+          <div id="child5" class="children">
+            <div>📭 No children listed</div>
+          </div>
+        </div>
+
+        <div class="member">
+          <button class="toggle-button" onclick="toggleChildren('child6')">👨 Palani ❤️ 👩 Viji</button>
+          <div id="child6" class="children">
+            <div class="member">
+              <button class="toggle-button" onclick="toggleChildren('child6a')">👩 Aruna ❤️ 🧔 Anandan</button>
+              <div id="child6a" class="children">
+                <div>👧 Advika</div>
+              </div>
+            </div>
+            <div class="member">
+              <button class="toggle-button" onclick="toggleChildren('child6b')">👩 Ajeetha ❤️ 🧔 Senthilmurugan</button>
+              <div id="child6b" class="children">
+                <div> - </div>
+              </div>
+            </div>
+            <div>🧑 Yogeshwaran</div>
+          </div>
+        </div>
+
+        <div class="member">
+          <button class="toggle-button" onclick="toggleChildren('child7')">🧔 Somasundaram ❤️ 👩 Rani</button>
+          <div id="child7" class="children">
+            <div>👧 Sriranjani</div>
+            <div>👧 Sriragavi</div>
+          </div>
+        </div>
+
+        <div class="member">
+          <button class="toggle-button" onclick="toggleChildren('child8')">👩 Gomathi ❤️ 👨 Ashok</button>
+          <div id="child8" class="children">
+            <div>👦 Akash</div>
+            <div>👦 Aagayasundari</div>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </div>
+
+  <script>
+    function toggleChildren(id) {
+      const element = document.getElementById(id);
+      element.style.display = element.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
 </body>
 </html>
